@@ -37,7 +37,6 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := false
 TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_COPY_FILES += \
-    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Device props
