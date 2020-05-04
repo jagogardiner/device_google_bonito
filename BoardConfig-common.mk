@@ -97,6 +97,10 @@ TARGET_RECOVERY_UI_LIB := \
     libbootloader_message \
     libfstab
 
+# Disable DM-verity
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
+
 # system.img
 BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
 
