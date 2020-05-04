@@ -16,29 +16,32 @@
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/mainline.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit AOSP config
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, device/google/bonito/device-bonito.mk)
 $(call inherit-product-if-exists, vendor/google_devices/bonito/proprietary/device-vendor.mk)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Ring_Synth_04.ogg \
-    ro.com.android.dataroaming=true \
-
-PRODUCT_PACKAGES += \
-    PhotoTable \
-    WallpaperPicker \
-    WAPPushManager \
-
-# STOPSHIP deal with Qualcomm stuff later
-# PRODUCT_RESTRICT_VENDOR_FILES := all
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
 PRODUCT_NAME := aosp_bonito
 PRODUCT_DEVICE := bonito
-PRODUCT_MODEL := AOSP on bonito
+PRODUCT_MODEL := Pixel 3a XL
+
+# Inherit Evolution-X product configuration
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_COPY_FILES += \
     device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+
+# Device props
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=bonito \
+    BUILD_FINGERPRINT=google/bonito/bonito:10/QQ2A.200501.001.B2/6352890:user/release-keys \
+    PRIVATE_BUILD_DESC="bonito-user 10 QQ2A.200501.001.B2 6352890 release-keys"
