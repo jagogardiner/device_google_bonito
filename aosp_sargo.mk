@@ -35,6 +35,11 @@ PRODUCT_NAME := aosp_sargo
 PRODUCT_DEVICE := sargo
 PRODUCT_MODEL := Pixel 3a
 
+EVO_DONATE_URL := https://www.paypal.me/nysascape
+EVO_MAINTAINER := nysascape
+EVO_SUPPORT_URL := https://t.me/EvolutionXPixel
+CUSTOM_BUILD_TYPE := OFFICIAL
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 

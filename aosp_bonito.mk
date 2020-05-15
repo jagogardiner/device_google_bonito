@@ -35,6 +35,11 @@ TARGET_INCLUDE_WIFI_EXT := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := false
 TARGET_BOOT_ANIMATION_RES := 1080
 
+EVO_DONATE_URL := https://www.paypal.me/nysascape
+EVO_MAINTAINER := nysascape
+EVO_SUPPORT_URL := https://t.me/EvolutionXPixel
+CUSTOM_BUILD_TYPE := OFFICIAL
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
