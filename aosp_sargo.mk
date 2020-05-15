@@ -39,6 +39,9 @@ PRODUCT_MODEL := Pixel 3a
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
+# Inherit Google extras
+$(call inherit-product, vendor/google_extras/sargo/sargo-vendor.mk)
+
 # Device props
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=sargo \

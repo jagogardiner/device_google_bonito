@@ -39,6 +39,9 @@ TARGET_BOOT_ANIMATION_RES := 1080
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
+# Inherit Google extras
+$(call inherit-product, vendor/google_extras/bonito/bonito-vendor.mk)
+
 # Device props
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=bonito \
