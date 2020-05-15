@@ -62,10 +62,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
-ifeq ($(wildcard vendor/google_devices/bonito/proprietary/device-vendor-bonito.mk),)
-    BUILD_WITHOUT_VENDOR := true
-endif
-
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -144,7 +140,10 @@ AB_OTA_PARTITIONS += \
     system \
     vbmeta \
     dtbo \
-    product
+    product \
+    vendor
+
+BUILD_WITHOUT_VENDOR := true
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
