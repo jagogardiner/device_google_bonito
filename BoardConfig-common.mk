@@ -233,5 +233,3 @@ TARGET_USES_MKE2FS := true
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/b4s4-setup.sh
-
--include vendor/google_devices/bonito/proprietary/BoardConfigVendor.mk

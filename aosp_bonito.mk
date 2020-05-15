@@ -21,7 +21,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit AOSP config
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, device/google/bonito/device-bonito.mk)
-$(call inherit-product-if-exists, vendor/google_devices/bonito/proprietary/device-vendor.mk)
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
