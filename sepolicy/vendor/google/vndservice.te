@@ -1,2 +1,0 @@
-type citadeld_service,             vndservice_manager_type;
-type perfstatsd_service,           vndservice_manager_type;
