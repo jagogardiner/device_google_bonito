@@ -23,7 +23,7 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 $(call inherit-product, device/google/bonito/device-bonito.mk)
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := Google
 PRODUCT_NAME := aosp_bonito
 PRODUCT_DEVICE := bonito
 PRODUCT_MODEL := Pixel 3a XL
